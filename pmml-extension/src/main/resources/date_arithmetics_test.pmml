@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_1" version="4.1">
+    <Header copyright="DMG.org"/>
+    <DataDictionary>
+        <DataField name="total" optype="continuous" dataType="double"/>
+        <DataField name="result" optype="continuous" dataType="double"/>
+    </DataDictionary>
+    <RegressionModel functionName="regression" targetFieldName="result">
+        <MiningSchema>
+            <MiningField name="total"/>
+            <MiningField name="result" usageType="predicted"/>
+        </MiningSchema>
+			<LocalTransformations>
+            <DerivedField name="datediff" optype="continuous" dataType="double" feature="transformedValue">
+				<Apply function="/">
+					<Apply function="org.jpmml.evaluator.functions.DateDiff">
+						<Constant dataType="string">2005-11-11 20:00:00</Constant>
+						<Constant dataType="string">2005-11-12 20:00:00</Constant>
+					</Apply>
+					<Constant dataType="integer">86400</Constant>
+				</Apply>
+			</DerivedField>
+			</LocalTransformations>
+        <RegressionTable intercept="0.0">
+            <NumericPredictor name="datediff" coefficient="1"/>
+        </RegressionTable>
+    </RegressionModel>
+</PMML>
