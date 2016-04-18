@@ -18,4 +18,4 @@ mvn clean install
 java -jar pmml-evaluator-example/target/example-1.2-SNAPSHOT.jar --model model.pmml --input input.tsv --output output.tsv
 ```
 
-You might want to have a look at the provided example PMML file in pmml-evaluator/src/main/resources/. 
+You might want to have a look at the provided example PMML file in pmml-extension/src/main/resources/. 
