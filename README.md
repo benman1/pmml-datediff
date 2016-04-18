@@ -15,7 +15,7 @@ For more information on jpmml, please see the [JPMML evaluator on github] (https
 mvn clean install
 
 ```
-java -jar pmml-evaluator-example/target/example-1.2-SNAPSHOT.jar --model model.pmml --input input.tsv --output output.tsv
+java -jar pmml-evaluator-example/target/example-1.2-SNAPSHOT.jar --model model.pmml --input input.csv --output output.csv
 ```
 
-You might want to have a look at the provided example PMML file in pmml-extension/src/main/resources/. 
+You might want to try out the provided example PMML file in pmml-extension/src/main/resources/. 
